@@ -42,6 +42,11 @@ Citizen.CreateThread(function()
             SetHeadingDetailsCustom(0, charInfo)
             SetHeadingDetailsCustom(2, string.upper(accountsInfo))
         end
+
+        local playerBlip = GetMainPlayerBlipId()
+        BeginTextCommandSetBlipName('STRING')
+        AddTextComponentString(charData.name)
+        EndTextCommandSetBlipName(playerBlip)
         Citizen.Wait(100)
     end
 end)
